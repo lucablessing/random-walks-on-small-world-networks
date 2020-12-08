@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 jupyter = "*"
 jupyterlab = "*"
+numpy = "*"
+networkx = "*"
+matplotlib = "*"
 
 [dev-packages]
 
