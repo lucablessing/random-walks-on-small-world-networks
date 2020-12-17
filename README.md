@@ -16,9 +16,9 @@
 
 ```
 $ pipenv install  # set up environment from Pipfile
-$ pipenv shell  # activate environment
-$ nodeenv -p  # install nodeenv in env for jupyter-widgets
-$ exit # deactivate env
-$ pipenv shell  # activate env
+$ pipenv shell    # activate environment
+$ nodeenv -p      # install nodeenv in env for jupyter-widgets
+$ exit            # deactivate env
+$ pipenv shell    # activate env
 $ jupyter labextension install @jupyter-widgets/jupyterlab-manager
 ```
