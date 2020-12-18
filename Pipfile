@@ -11,6 +11,7 @@ networkx = "*"
 matplotlib = "*"
 nodeenv = "*"
 tqdm = "*"
+multiprocess = "*"
 
 [dev-packages]
 
