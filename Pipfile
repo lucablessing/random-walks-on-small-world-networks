@@ -10,6 +10,7 @@ numpy = "*"
 networkx = "*"
 matplotlib = "*"
 nodeenv = "*"
+tqdm = "*"
 
 [dev-packages]
 
