@@ -12,6 +12,7 @@ matplotlib = "*"
 nodeenv = "*"
 tqdm = "*"
 multiprocess = "*"
+flake8 = "*"
 
 [dev-packages]
 
