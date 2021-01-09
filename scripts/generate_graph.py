@@ -63,7 +63,7 @@ def small_world_2d(L, r, seed=42):
     return G
 
 
-def small_world_2d_new(L, r, seed=42):
+def small_world_2d_new(L, r, seed=None):
     '''
     constructor of a Small world graph model
 
@@ -75,6 +75,9 @@ def small_world_2d_new(L, r, seed=42):
     Return:
     - G: small world graph
     '''
+    if seed is not None:
+        np.random.seed(seed)
+
     np.random.seed(seed)
     G = nx.grid_2d_graph(L, L, periodic=True)
 
@@ -105,5 +108,33 @@ def small_world_2d_new(L, r, seed=42):
         edge_list = list(edge_list[np.where(np.random.uniform(0, 1, int(L*L-i-1)) < dist_2d**(-r)/Z)[0]])
         # add edges to G
         G.add_edges_from(edge_list)
+
+    return G
+
+
+def sparse_lattice_graph(L, fraction_of_nodes_to_remove=0.1, seed=None, periodic_lattice=True):
+    '''
+    Constructor of a sparse lattice graph, where a part of the nodes are deleted
+    by removing all their incidend edges.
+
+    Arguments:
+    - L: number of points on line
+    - fraction_of_nodes_to_remove: fraction of nodes to be removed, default = 0.1
+    - seed: inital number used to generate the random edges, default = None
+
+    Return:
+    - G: small world graph
+    '''
+    if seed is not None:
+        np.random.seed(seed)
+
+    G = nx.grid_2d_graph(L, L, periodic=periodic_lattice)
+
+    node_list = list(G.nodes())
+    node_arr = np.empty(L*L, dtype=object)
+    node_arr[...] = node_list
+    edge_list = list(G.edges(
+        node_arr[np.random.choice(L*L, size=int(fraction_of_nodes_to_remove*L*L), replace=False)]))
+    G.remove_edges_from(edge_list)
 
     return G
