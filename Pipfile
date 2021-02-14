@@ -13,6 +13,8 @@ nodeenv = "*"
 tqdm = "*"
 multiprocess = "*"
 flake8 = "*"
+scipy = "*"
+seaborn = "*"
 
 [dev-packages]
 
