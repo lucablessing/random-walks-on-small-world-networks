@@ -30,7 +30,8 @@
 2. Start shell 
 3. Install ```nodeenv```
 4. Exit and restart shell to apply changes
-5. Install widgets and you're good to go!
+5. Install some basic libraries
+6. Install widgets and you're good to go!
 
 ```
 $ cd ~/PATH/TO/YOUR/DIRECTORY
@@ -40,5 +41,6 @@ $ pipenv shell    # activate environment
 $ nodeenv -p      # install nodeenv in env for jupyter-widgets
 $ exit            # deactivate env
 $ pipenv shell    # activate env
+$ pipenv install numpy scipy matplotlib jupyter jupyterlab
 $ jupyter labextension install @jupyter-widgets/jupyterlab-manager
 ```
