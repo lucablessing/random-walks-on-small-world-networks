@@ -24,13 +24,17 @@
 
 ### Setup using pipenv
 
-1. Install from Pipfile 
+1. In your Terminal (on Mac or Linux) go to the directory you want to work in
+2. Install pipenv
+1. Setup an environment or install from Pipfile 
 2. Start shell 
 3. Install ```nodeenv```
 4. Exit and restart shell to apply changes
 5. Install widgets and you're good to go!
 
 ```
+$ cd ~/PATH/TO/YOUR/DIRECTORY
+$ pip3 install --user pipenv # install pipenv if you don't have it yet
 $ pipenv install  # set up environment from Pipfile
 $ pipenv shell    # activate environment
 $ nodeenv -p      # install nodeenv in env for jupyter-widgets
